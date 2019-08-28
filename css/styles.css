@@ -1,11 +1,6 @@
 
-.playerturn  {
-  color: blue;
-}
 
-.otherplayerturn {
-  color: red
-}
+
 
 #player1 {
   color: green;
@@ -13,4 +8,18 @@
 
 #player2 {
   color: purple;
+}
+
+
+
+
+
+.playerturn  {
+  background-color: blue;
+  font-size: 400%;
+}
+
+.otherplayerturn {
+  color: red
+  font-size: 400%;
 }

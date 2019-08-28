@@ -17,13 +17,13 @@ $(document).ready(function(){
     function switchPlayers (players, currentPlayer){
       if(currentPlayer === players[0]) {
         currentPlayer = players[1];
-      $("#player2").addClass(".playerturn")
-      $("#player1").removeClass(".playerturn")
+      $("#player2").addClass("playerturn")
+      $("#player1").removeClass("playerturn")
       console.log("We're here")
     } else {
       currentPlayer = players[0];
-      $("#player1").addClass(".playerturn")
-      $("#player2").removeClass(".playerturn")
+      $("#player1").addClass("playerturn")
+      $("#player2").removeClass("playerturn")
     }
     console.log(currentPlayer);
   }
@@ -32,10 +32,14 @@ $(document).ready(function(){
         console.log ("LOSE");
         switchPlayers(players, currentPlayer);
       } else {
-        $(".container p ").text(myplayer.addScore(roll()));
+        $("#player1").append(myplayer.addScore(roll()));
+        $("#player1").empty().append(myplayer.addScore(roll()));
+        $("#player2").append(myopponent.addScore(roll()));
+        $("#player2").empty().append(myplayer.addScore(roll()));
       }
     });
   });
+
 
 // document.getElementById("rollDice").addEventListener("click", roll);
 //
