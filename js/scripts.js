@@ -7,9 +7,7 @@ $(document).ready(function(){
       return Math.floor(Math.random() *6) + 1
     }
 
-    var numberBuffer = roll()
-    var player1 = new Player("player1")
-    var player2 = new Player("player2")
+    var numberBuffer = roll();
     var players = [player1, player2];
     var turn = Math.round(Math.random());
     var currentPlayer = players[turn];
@@ -19,13 +17,12 @@ $(document).ready(function(){
         currentPlayer = players[1];
       $("#player2").addClass("playerturn")
       $("#player1").removeClass("playerturn")
-      console.log("We're here")
+      console.log(currentPlayer)
     } else {
       currentPlayer = players[0];
       $("#player1").addClass("playerturn")
       $("#player2").removeClass("playerturn")
     }
-    console.log(currentPlayer);
   }
 
       if (numberBuffer === 1) {
@@ -40,26 +37,44 @@ $(document).ready(function(){
     });
   });
 
+Turn.prototype.startGame = function (){
+  myplayer =players [0],
+
+
+
+  };
+
+
+
+
+}
+
 
 // document.getElementById("rollDice").addEventListener("click", roll);
 //
 
-
 //Back End//
-function Player (player, score){
-  this.player = player,
-  this.index = [0]
+
+function Turn (numberRolled, score, index) {
+  this.numberRolled = numberRolled,
+  this.score = 0,
+  this.index = 0
+
 }
 
-function Turn (numberRolled, score) {
-  this.numberRolled = numberRolled,
-  this.score = 0
- }
 
  Turn.prototype.addScore = function(numberRolled){
    this.score += numberRolled;
    return this.score;
- }
 
+
+ //(Click button to start game or pick color or X)
+   Turn.prototype.addIndex = function () {
+       this.Turn.push(index);
+       Turn.index+=  this.index;
+       return this;
+   };
+
+//  //
  var myplayer = new Turn (0, 0)
  var myopponent = new Turn (0, 0)
