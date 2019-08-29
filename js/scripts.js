@@ -7,10 +7,7 @@ function roll() {
 
 // Front End//
 $(document).ready(function() {
-  // $("#start").click(function() {
-  //   var players = [myplayer, myopponent];
-  // });
-  $("#rollDiceP2").click(function() {
+  $("#rollDiceP1").click(function() {
     var numberBuffer = roll();
     var tempScore = 0;
     if (numberBuffer !== 1) {
@@ -18,26 +15,35 @@ $(document).ready(function() {
       $("#player1").text(player1.addScore(numberBuffer));
     }
     else if (numberBuffer === 1) {
-      alert("Give your opponent a turn")
+      alert("Give Player 2 a turn")
       return
     }
   });
 
-
-$("#rollDiceP1").click(function() {
+$("#rollDiceP2").click(function() {
   var numberBuffer = roll();
   var tempScore = 0;
   if (numberBuffer !== 1) {
     console.log(numberBuffer);
     $("#player2").text(player2.addScore(numberBuffer));
-  }
-  else if (numberBuffer === 1) {
-    alert("Give your opponent a turn")
+  } else if (numberBuffer === 1) {
+    alert("Give Player 1 a turn")
+
     return
   }
-})
 });
 
+$("#holdP2").click(function() {
+  alert("Give Player 1 a turn")
+  return
+});
+
+$("#holdP1").click(function() {
+  alert("Give Player 2 a turn")
+  return
+});
+
+});
 
 
 
