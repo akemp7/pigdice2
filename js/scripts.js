@@ -10,59 +10,37 @@ $(document).ready(function() {
   // $("#start").click(function() {
   //   var players = [myplayer, myopponent];
   // });
-  $("#rollDice").click(function() {
-
+  $("#rollDiceP2").click(function() {
     var numberBuffer = roll();
     var tempScore = 0;
-    var players = [player1, player2];
-
-    // function switchPlayers (players, currentPlayer){
-    //     if(numberBuffer===1) {
-    //       (currentPlayer === players[0])
-    //       currentPlayer = players[1];
-    //     $("#player1").addClass("playerturn")
-    //     $("#player2").removeClass("playerturn")
-    //     console.log(currentPlayer)
-    //   } else {
-    //     currentPlayer = players[0];
-    //     $("#player2").addClass("playerturn")
-    //     $("#player1").removeClass("playerturn")
-    //   }
-    // }
-    // $("#player1").append(player1.addScore(roll()));
-    // $("#player1").empty().append(player1.addScore(roll()));
     if (numberBuffer !== 1) {
       console.log(numberBuffer);
       $("#player1").text(player1.addScore(numberBuffer));
-      // $("#player2").append(player2.addScore(roll(tempScore)));
-      // $("#player2").empty().append(player1.addScore(roll(tempScore)));
-
-    } else if (numberBuffer === 1) {
-
-      // return currentPlayer = switchPlayers(currentPlayer, players);
-      var players = [player2, player1];
-      $("#player2").text(player2.addScore(numberBuffer));
     }
-    // }else if (numberBuffer===1) {
-    //   var players = [player1, player2];
-    //     $("#player1").append(player1.addScore(roll()));
-    //     $("#player1").empty().append(player1.addScore(roll()));}
-
-
-    // $("#player2").append(myplayer.addScore(roll()));
-    // $("#player2").empty().append(myplayer.addScore(roll()));
-    // };
-
+    else if (numberBuffer === 1) {
+      alert("Give your opponent a turn")
+      return
+    }
   });
-});
-// if (numberBuffer === 1){
-//   currentPlayer = switchPlayers ();
-//   $("#player2").append(myplayer.addScore(roll()));
-//   $("#player2").empty().append(myplayer.addScore(roll()));
-// }
 
-// document.getElementById("rollDice").addEventListener("click", roll);
-//
+
+$("#rollDiceP1").click(function() {
+  var numberBuffer = roll();
+  var tempScore = 0;
+  if (numberBuffer !== 1) {
+    console.log(numberBuffer);
+    $("#player2").text(player2.addScore(numberBuffer));
+  }
+  else if (numberBuffer === 1) {
+    alert("Give your opponent a turn")
+    return
+  }
+})
+});
+
+
+
+
 
 //Back End//
 
